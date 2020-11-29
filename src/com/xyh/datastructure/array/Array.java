@@ -26,6 +26,7 @@ public class Array<E> {
 
     /**
      * 带参构造函数
+     *
      * @param capacity 数组容量
      */
     public Array(int capacity) {
@@ -42,6 +43,7 @@ public class Array<E> {
 
     /**
      * 获取数组容量
+     *
      * @return 数组容量
      */
     public int getCapacity() {
@@ -50,6 +52,7 @@ public class Array<E> {
 
     /**
      * 获取数组中元素数量
+     *
      * @return 数组元素数量
      */
     public int size() {
@@ -58,6 +61,7 @@ public class Array<E> {
 
     /**
      * 判断数组是否为空
+     *
      * @return 数组是否为空
      */
     public boolean isEmpty() {
@@ -66,6 +70,7 @@ public class Array<E> {
 
     /**
      * 在数组指定索引处插入元素
+     *
      * @param index 数组索引
      * @param e 待插入元素
      */
@@ -85,6 +90,7 @@ public class Array<E> {
 
     /**
      * 在数组末尾插入元素
+     *
      * @param e 待插入元素
      */
     public void addLast(E e) {
@@ -93,6 +99,7 @@ public class Array<E> {
 
     /**
      * 在数组开头插入元素
+     *
      * @param e 待插入元素
      */
     public void addFirst(E e) {
@@ -101,6 +108,7 @@ public class Array<E> {
 
     /**
      * 获取数组index索引处的元素
+     *
      * @param index 数组索引
      * @return index索引处元素
      */
@@ -112,7 +120,26 @@ public class Array<E> {
     }
 
     /**
+     * 获取数组第一个元素
+     *
+     * @return 数组第一个元素
+     */
+    public E getFirst() {
+        return get(0);
+    }
+
+    /**
+     * 获取数组最后一个元素
+     *
+     * @return 数组最后一个元素
+     */
+    public E getLast() {
+        return get(size - 1);
+    }
+
+    /**
      * 修改数组index索引处元素的值
+     *
      * @param index 数组索引
      * @param e 待修改的元素值
      */
@@ -125,6 +152,7 @@ public class Array<E> {
 
     /**
      * 查找元素在数组中第一次出现位置的索引
+     *
      * @param e 待查找元素
      * @return 数组索引（元素未在数组中出现返回-1）
      */
@@ -139,6 +167,7 @@ public class Array<E> {
 
     /**
      * 判断数组中是否包含某个元素
+     *
      * @param e 待判断元素
      * @return 是否包含某个元素
      */
@@ -148,6 +177,7 @@ public class Array<E> {
 
     /**
      * 删除数组index索引处的元素
+     *
      * @param index 数组索引
      * @return 删除元素
      */
@@ -171,6 +201,7 @@ public class Array<E> {
 
     /**
      * 删除数组中第一个元素
+     *
      * @return 删除元素
      */
     public E removeFirst() {
@@ -179,6 +210,7 @@ public class Array<E> {
 
     /**
      * 删除数组中最后一个元素
+     *
      * @return 删除元素
      */
     public E removeLast() {
@@ -187,12 +219,13 @@ public class Array<E> {
 
     /**
      * 自封装Array转字符串方法
+     *
      * @return 字符串
      */
     @Override
     public String toString() {
         StringBuilder res = new StringBuilder();
-        res.append(String.format("Array: size = %d, capacity = %d\n", size, data.length));
+        res.append(String.format("Array: size = %d, capacity = %d%n", size, data.length));
         res.append('[');
         for (int i = 0; i < size; i++) {
             res.append(data[i]);
@@ -206,6 +239,7 @@ public class Array<E> {
 
     /**
      * 数组扩容
+     *
      * @param newCapacity 数组扩容之后容量
      */
     private void resize(int newCapacity) {
