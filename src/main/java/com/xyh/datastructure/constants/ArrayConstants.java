@@ -1,13 +1,16 @@
 package com.xyh.datastructure.constants;
 
 /**
- * @description: 自定义数组类常量
+ * @description: 自封装数组类常量
  * @author: LitheLight
  * @createDate: 2020/11/30
  * @modifiedBy:
  */
 public class ArrayConstants {
 
+    /**
+     * 私有构造函数
+     */
     private ArrayConstants() {
 
     }

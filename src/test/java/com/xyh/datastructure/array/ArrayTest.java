@@ -178,8 +178,8 @@ class ArrayTest {
     void testToString() {
         Array<Integer> array = new Array<>();
         array.add(0, 1);
-        assertEquals(String.format("Array: size = 1, capacity = 10%n[1]"), array.toString());
+        assertEquals(String.format("Array: size = 1, capacity = 10%nfront [1] tail"), array.toString());
         array.add(1, 2);
-        assertEquals(String.format("Array: size = 2, capacity = 10%n[1, 2]"), array.toString());
+        assertEquals(String.format("Array: size = 2, capacity = 10%nfront [1, 2] tail"), array.toString());
     }
 }
