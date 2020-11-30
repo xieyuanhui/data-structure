@@ -1,5 +1,7 @@
 package com.xyh.datastructure.array;
 
+import com.xyh.datastructure.constants.ArrayConstants;
+
 /**
  * @description: 自封装数组类
  * @author: LitheLight
@@ -15,14 +17,6 @@ public class Array<E> {
      * 数组元素数量
      */
     private int size;
-    /**
-     * 数组减小容量阈值参数
-     */
-    private static final int REDUCE_THRESHOLD = 4;
-    /**
-     * 数组扩容阈值参数
-     */
-    private static final int INCREASE_THRESHOLD = 2;
 
     /**
      * 带参构造函数
@@ -30,6 +24,9 @@ public class Array<E> {
      * @param capacity 数组容量
      */
     public Array(int capacity) {
+        if (capacity <= 0) {
+            throw new IllegalArgumentException(ArrayConstants.CONSTRUCT_ERROR);
+        }
         data = (E[])new Object[capacity];
         size = 0;
     }
@@ -76,10 +73,10 @@ public class Array<E> {
      */
     public void add(int index, E e) {
         if (index < 0 || index > size) {
-            throw new IllegalArgumentException("Add element failed. Require index >= 0 && index <= size");
+            throw new IllegalArgumentException(ArrayConstants.ADD_ERROR);
         }
         if (size == data.length) {
-            resize(data.length * INCREASE_THRESHOLD);
+            resize(data.length * ArrayConstants.INCREASE_THRESHOLD);
         }
         for (int i = size - 1; i >= index; i--) {
             data[i + 1] = data[i];
@@ -114,7 +111,7 @@ public class Array<E> {
      */
     public E get(int index) {
         if (index < 0 || index >= size) {
-            throw new IllegalArgumentException("Get failed. Require index >= 0 && index < size");
+            throw new IllegalArgumentException(ArrayConstants.GET_ERROR);
         }
         return data[index];
     }
@@ -145,7 +142,7 @@ public class Array<E> {
      */
     public void set(int index, E e) {
         if (index < 0 || index >= size) {
-            throw new IllegalArgumentException("Get failed. Require index >= 0 && index < size");
+            throw new IllegalArgumentException(ArrayConstants.SET_ERROR);
         }
         data[index] = e;
     }
@@ -183,7 +180,7 @@ public class Array<E> {
      */
     public E remove(int index) {
         if (index < 0 || index >= size) {
-            throw new IllegalArgumentException("Get failed. Require index >= 0 && index < size");
+            throw new IllegalArgumentException(ArrayConstants.REMOVE_ERROR);
         }
         E delElement = data[index];
         for (int i = index + 1; i < size; i++) {
@@ -193,7 +190,7 @@ public class Array<E> {
         // 释放空间，防止内存泄露
         data[size] = null;
         // 数组元素数量小于容量四分之一时数组减小容量
-        if (size == data.length / REDUCE_THRESHOLD && data.length / INCREASE_THRESHOLD != 0) {
+        if (size == data.length / ArrayConstants.REDUCE_THRESHOLD && data.length / ArrayConstants.INCREASE_THRESHOLD != 0) {
             resize(data.length / 2);
         }
         return delElement;

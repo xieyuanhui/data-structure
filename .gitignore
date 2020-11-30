@@ -2,6 +2,7 @@
 /target
 /.idea
 /out
+/logs
 *.iml
 
 #编译文件
