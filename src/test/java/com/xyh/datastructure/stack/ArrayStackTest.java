@@ -37,10 +37,12 @@ class ArrayStackTest {
 
     @Test
     void isEmpty() {
-        ArrayStack<String> arrayStack = new ArrayStack<>();
+        ArrayStack<String> arrayStack = new ArrayStack<>(1);
         assertTrue(arrayStack.isEmpty());
         arrayStack.push("a");
         assertFalse(arrayStack.isEmpty());
+        arrayStack.push("b");
+        assertEquals(2, arrayStack.getSize());
     }
 
     @Test
@@ -71,6 +73,10 @@ class ArrayStackTest {
         arrayStack.push("a");
         assertFalse(arrayStack.isEmpty());
         assertEquals("a", arrayStack.peek());
+        arrayStack.pop();
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class,
+                arrayStack::peek, ArrayConstants.THROW_MESSAGE);
+        assertEquals(ArrayConstants.GET_ERROR, exception.getMessage());
     }
 
     @Test

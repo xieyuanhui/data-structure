@@ -1,49 +1,49 @@
-package com.xyh.datastructure.stack;
+package com.xyh.datastructure.queue;
 
 import com.xyh.datastructure.array.Array;
 import com.xyh.datastructure.utils.CommonMethods;
 
 /**
- * @description: 自封装栈类
+ * @description: 自封装队列
  * @author: LitheLight
- * @createDate: 2020/11/29
+ * @createDate: 2020/11/30
  * @modifiedBy:
  */
-public class ArrayStack<E> implements Stack<E> {
+public class ArrayQueue<E> implements Queue<E> {
     /**
-     * 自定义数组
+     * 自封装数组
      */
     private final Array<E> array;
 
     /**
      * 带参构造函数
      *
-     * @param capacity 栈容量
+     * @param capacity 队列容量
      */
-    public ArrayStack(int capacity) {
+    public ArrayQueue(int capacity) {
         array = new Array<>(capacity);
     }
 
     /**
      * 无参构造函数
      */
-    public ArrayStack() {
+    public ArrayQueue() {
         array = new Array<>();
     }
 
     /**
-     * 获取栈容量
+     * 获取队列容量
      *
-     * @return 栈容量
+     * @return 队列容量
      */
     public int getCapacity() {
         return array.getCapacity();
     }
 
     /**
-     * 获取栈元素数量
+     * 获取队列元素数量
      *
-     * @return 栈元素数量
+     * @return 队列元素数量
      */
     @Override
     public int getSize() {
@@ -51,9 +51,9 @@ public class ArrayStack<E> implements Stack<E> {
     }
 
     /**
-     * 判断栈是否为空
+     * 判断队列是否为空
      *
-     * @return 栈是否为空
+     * @return 队列是否为空
      */
     @Override
     public boolean isEmpty() {
@@ -61,43 +61,43 @@ public class ArrayStack<E> implements Stack<E> {
     }
 
     /**
-     * 栈中添加元素
+     * 元素入队
      *
-     * @param e 待添加元素
+     * @param e 待入队元素
      */
     @Override
-    public void push(E e) {
+    public void enQueue(E e) {
         array.addLast(e);
     }
 
     /**
-     * 弹出栈元素
+     * 元素出队
      *
-     * @return 待弹出元素
+     * @return 出队元素
      */
     @Override
-    public E pop() {
-        return array.removeLast();
+    public E deQueue() {
+        return array.removeFirst();
     }
 
     /**
-     * 获取栈顶元素
+     * 获取队首元素
      *
-     * @return 栈顶元素
+     * @return 队首元素
      */
     @Override
-    public E peek() {
-        return array.getLast();
+    public E getFront() {
+        return array.getFirst();
     }
 
     /**
-     * 自封装栈转字符串
+     * 自封装队列转字符串
      *
-     * @return 栈转化后的字符串
+     * @return 字符串
      */
     @Override
     public String toString() {
         CommonMethods methods = new CommonMethods();
-        return methods.arrayToString(array, "ArrayStack");
+        return methods.arrayToString(array, "ArrayQueue");
     }
 }
