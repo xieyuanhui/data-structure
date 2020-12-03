@@ -26,9 +26,9 @@ public class ListConstants {
     /**
      * 链表修改元素错误
      */
-    public static final String SET_ERROR = "Get element failed. Require index >= 0 && index < size";
+    public static final String SET_ERROR = "Set element failed. Require index >= 0 && index < size";
     /**
      * 链表删除元素错误
      */
-    public static final String REMOVE_ERROR = "Get element failed. Require index >= 0 && index < size";
+    public static final String REMOVE_ERROR = "Remove element failed. Require index >= 0 && index < size";
 }

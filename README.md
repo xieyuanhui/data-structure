@@ -6,6 +6,8 @@
 + [自封装队列实现](https://github.com/xieyuanhui/data-structure/blob/master/src/main/java/com/xyh/datastructure/queue/ArrayQueue.java)
 + [自封装循环队列实现](https://github.com/xieyuanhui/data-structure/blob/master/src/main/java/com/xyh/datastructure/queue/LoopQueue.java)
 + [自封装链表实现](https://github.com/xieyuanhui/data-structure/blob/master/src/main/java/com/xyh/datastructure/list/LinkedList.java)
++ [自封装基于链表的栈实现](https://github.com/xieyuanhui/data-structure/blob/master/src/main/java/com/xyh/datastructure/stack/LinkedListStack.java)
++ [自封装基于链表的队列实现](https://github.com/xieyuanhui/data-structure/blob/master/src/main/java/com/xyh/datastructure/queue/LinkedListQueue.java)
 
 ### 测试类
 + [自封装数组测试类](https://github.com/xieyuanhui/data-structure/blob/master/src/test/java/com/xyh/datastructure/array/ArrayTest.java)
@@ -13,3 +15,5 @@
 + [自封装队列测试类](https://github.com/xieyuanhui/data-structure/blob/master/src/test/java/com/xyh/datastructure/queue/ArrayQueueTest.java)
 + [自封装循环队列测试类](https://github.com/xieyuanhui/data-structure/blob/master/src/test/java/com/xyh/datastructure/queue/LoopQueueTest.java)
 + [自封装链表测试类](https://github.com/xieyuanhui/data-structure/blob/master/src/test/java/com/xyh/datastructure/list/LinkedListTest.java)
++ [自封装基于链表的栈测试类](https://github.com/xieyuanhui/data-structure/blob/master/src/test/java/com/xyh/datastructure/stack/LinkedListStackTest.java)
++ [自封装基于链表的队列测试类](https://github.com/xieyuanhui/data-structure/blob/master/src/test/java/com/xyh/datastructure/queue/LinkedListQueueTest.java)
